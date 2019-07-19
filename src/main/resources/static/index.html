@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter analyzer</title>
+    <style type="text/css">
+        .scrollable{
+            overflow-y: auto;
+            max-height: 200px;
+        }
+        .image {
+            display: inline;
+            padding: 10px;
+        }
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="js/web_service_call.js"></script>
+</head>
+
+<body>
+<div>
+    <!--<font color="blue" size="6"><p class="text-center">Twitter</p></font>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div align="center">
+                    <a href="https://controlodio.it/progetto" target="_blank"><img class="image" src="images/images.jfif" alt="hate checker"></a>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="twitterScreenName" placeholder="Screen name">
+                    <small class="form-text text-muted">Lo screen name e' posto nell'URL del profilo da ricercare
+                    </small>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <div align="center">
+        <button type="submit" class="btn btn-primary" id="searchTwitterUser">Cerca</button>
+    </div>
+</div>
+<br>
+<p align="center" class="numero_tweet"></p>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div id="tabella_odio">
+                <table class="table table-sm">
+                    <thead>
+                    <tr>
+                        <th class="text-center"> Homophobia</th>
+                        <th class="text-center"> Xenophobia</th>
+                        <th class="text-center"> Disability</th>
+                        <th class="text-center"> Sexism</th>
+                        <th class="text-center"> Anti-semitism</th>
+                        <th class="text-center"> Racism</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td align="center" class="Homophobia"></td>
+                        <td align="center" class="Xenophobia"></td>
+                        <td align="center" class="Disability"></td>
+                        <td align="center" class="Sexism"></td>
+                        <td align="center" class="Anti-semitism"></td>
+                        <td align="center" class="Racism"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="esempi">
+                <div class="card bg-light">
+                    <div class="card-header">Alcuni tweet offensivi rilevati</div>
+                    <div class="card-body">
+                        <div class="scrollable" id="lista_tweet_offensivi">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rete_sociale">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<div id="footer">
+    <div class="col-sm-12" align="center"><a href="http://acmos.net/" target="_blank"><img src="images/Logo_acmos.jpg" alt="Logo_acmos" style="max-height: 6rem;"></a>
+        <a href="http://www.lavoro.gov.it/Pagine/default.aspx" target="_blank"><img src="images/Logo_ministero.jpg" alt="Logo_ministero" style="max-height: 6rem;"></a>
+        <a href="http://hatespeech.di.unito.it/" target="_blank"><img src="images/Logo_unito.png" alt="Logo_unito" style="max-height: 6rem;"></a>
+        <a href="http://www.di.uniba.it/~swap/index.php?n=Main.HomePage" target="_blank"><img src="images/Logo_univbari.png" alt="Logo_univbari" style="max-height: 6rem;"></a>
+        <a href="http://benvenutiinitalia.it/" target="_blank"><img src="images/Logo_bit.png" alt="Logo_bit" style="max-height: 6rem;"></a>
+        <a href="http://www.voxdiritti.it/" target="_blank"><img src="images/Logo_vox.png" alt="Logo_vox" style="max-height: 6rem;"></a>
+        <a href="https://www.saamanagement.it/saa-innovazione/labnet/" target="_blank"><img src="images/Logo_labnet.jfif" alt="Logo_labnet" style="max-height: 6rem;"></a></div>
+</div>
+</body>
+</html>
