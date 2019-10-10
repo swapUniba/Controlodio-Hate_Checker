@@ -14,7 +14,7 @@ $(document).ready(function () {
             success: function (msg) {
                 if(!(msg === '')) {
                     var totale_tweet = msg["total_tweet"];
-                    $("p.numero_tweet").html("<b>Risultati analisi di \""+msg["profile"]["name"]+"\" su un totale di " + totale_tweet + " tweet<br>Ripartizione delle categorie di odio su eventuali hate speech rilevate </b>");
+                    $("p.numero_tweet").html("<font size='4'> <b>Risultati analisi di \""+msg["profile"]["name"]+"\" su un totale di " + totale_tweet + " tweet<br>Ripartizione delle categorie di odio su eventuali hate speech rilevate </b></font>");
                     $("td.Homophobia").html(valutaImpattoCategoria(msg["profile"]["categorie"]["homophobia"]));
                     $("td.Xenophobia").html(valutaImpattoCategoria(msg["profile"]["categorie"]["xenophobia"]));
                     $("td.Disability").html(valutaImpattoCategoria(msg["profile"]["categorie"]["disability"]));
@@ -26,7 +26,8 @@ $(document).ready(function () {
                     $(".scrollable").empty();
                     var count = 1;
                     msg["tweet"].forEach(function (item) {
-                        $("#lista_tweet_offensivi").append("<p class=\"card-text\">"+(count)+") "+item+"</p>");
+                        //$("#lista_tweet_offensivi").append("<p class=\"card-text\">"+(count)+") "+item+"</p>");
+                        $("#lista_tweet_offensivi").append("<p style='font-family: sans-serif; color: #4a4a4a; font-size: 1rem; font-weight: 400;line-height: 1.5'>"+(count)+") "+item+"</p>");
                         tweet_flag = true;
                         count++;
                     });
@@ -70,11 +71,11 @@ $(document).ready(function () {
 function valutaImpattoCategoria(occorrenze) {
     occorrenze = parseInt(occorrenze);
     if(occorrenze === 0){
-        return "<p align=\"center\">"+String.fromCodePoint(0x1F604)+"</p>";
+        return "<font size='6'>"+String.fromCodePoint(0x1F642)+"</p>";
     }else if(occorrenze >= 1 && occorrenze < 3){
-        return "<font color=\"#ff4500\">"+String.fromCodePoint(0x1F61F)+"</font>";
+        return "<font size='6'>"+String.fromCodePoint(0x2639)+"</font>";
     }else{
-        return "<font color=\"red\">"+String.fromCodePoint(0x1F621)+"</font>";
+        return "<font size='6'>"+String.fromCodePoint(	0x1F621)+"</font>";
     }
 }
 
