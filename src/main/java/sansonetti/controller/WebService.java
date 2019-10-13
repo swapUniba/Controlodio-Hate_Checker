@@ -379,7 +379,7 @@ public class WebService {
             profile.setSource("twitter");
             profile.setCategorie(categorie);
             profile.setConnections(false);
-            profile.setLast_update(LocalDate.now());
+            profile.setAggiornatoIl(LocalDate.now());
             profileCollection.deleteByScreenNameAndSource(user.getScreenName(), "twitter");
             profileCollection.insert(profile);
         } catch (MongoWriteException e) {

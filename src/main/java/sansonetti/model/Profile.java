@@ -21,7 +21,7 @@ public class Profile {
     private String source;
     private HashMap<String, Integer> categorie;
     private boolean connections;
-    private LocalDate last_update;
+    private LocalDate aggiornatoIl;
 
     public String getId() {
         return id;
@@ -119,12 +119,12 @@ public class Profile {
         this.connections = connections;
     }
 
-    public LocalDate getLast_update() {
-        return last_update;
+    public LocalDate getAggiornatoIl() {
+        return aggiornatoIl;
     }
 
-    public void setLast_update(LocalDate last_update) {
-        this.last_update = last_update;
+    public void setAggiornatoIl(LocalDate aggiornatoIl) {
+        this.aggiornatoIl = aggiornatoIl;
     }
 
     @Override
