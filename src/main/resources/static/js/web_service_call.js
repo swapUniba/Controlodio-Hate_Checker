@@ -8,7 +8,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             crossOrigin: true,
-            url: "http://localhost:8081/searchTwitterUser",
+            url: "http://193.204.187.192:8097/searchTwitterUser",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(twitterRequestBody),
             success: function (msg) {
